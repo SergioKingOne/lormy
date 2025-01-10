@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Gallery } from "@/components/gallery";
 import { Testimonials } from "@/components/testimonials";
@@ -6,20 +8,39 @@ import { Services } from "@/components/services";
 import { Instagram, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      document.documentElement.style.setProperty(
+        "--parallax-y",
+        `${scrollY * 0.5}px`
+      );
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <main>
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#FEBAB9]/5">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-white/50 to-white" />
-          <Image
-            src="/images/makeup-bg.jpg"
-            alt="Background"
-            fill
-            className="object-cover opacity-50"
-            priority
-          />
+          <div
+            className="relative h-full w-full"
+            style={{ transform: "translateY(var(--parallax-y))" }}
+          >
+            <Image
+              src="/images/makeup-bg.jpg"
+              alt="Background"
+              fill
+              className="object-cover opacity-50"
+              priority
+            />
+          </div>
         </div>
         <div className="container relative z-10 px-4 py-20 text-center">
           <h1 className="font-serif text-5xl md:text-7xl font-bold text-neutral-800 mb-6 animate-fade-up">
@@ -51,7 +72,7 @@ export default function Home() {
       <Services />
 
       <section className="py-24 bg-neutral-50">
-        <div className="container px-4">
+        <div className="container mx-auto max-w-7xl px-4">
           <h2 className="text-3xl md:text-4xl font-serif text-center text-neutral-800 mb-16">
             Recent Transformations
           </h2>
@@ -62,7 +83,7 @@ export default function Home() {
       <Testimonials />
 
       <section className="py-24 bg-[#FEBAB9]/5">
-        <div className="container px-4 text-center">
+        <div className="container mx-auto max-w-7xl px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-serif text-neutral-800 mb-4">
             Follow Our Journey
           </h2>
@@ -76,7 +97,7 @@ export default function Home() {
                 className="relative aspect-square group overflow-hidden rounded-xl"
               >
                 <Image
-                  src={`/images/instagram-${i + 1}.jpg`}
+                  src={`/instagram-${i + 1}.jpg`}
                   alt="Instagram post"
                   fill
                   className="object-cover transition-transform group-hover:scale-110"
@@ -98,7 +119,7 @@ export default function Home() {
       </section>
 
       <section id="booking" className="py-24">
-        <div className="container px-4">
+        <div className="container mx-auto max-w-7xl px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-serif text-center text-neutral-800 mb-4">
               Book Your Session

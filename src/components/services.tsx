@@ -57,7 +57,7 @@ const services = [
 export function Services() {
   return (
     <section id="services" className="py-24">
-      <div className="container mx-auto px-4">
+      <div className="container px-4">
         <h2 className="text-3xl md:text-4xl font-serif text-center text-neutral-800 mb-4">
           Our Services
         </h2>
@@ -68,7 +68,10 @@ export function Services() {
         </p>
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service) => (
-            <Card key={service.title} className="relative group">
+            <Card
+              key={service.title}
+              className="relative group overflow-hidden"
+            >
               <CardHeader>
                 <div className="w-12 h-12 rounded-full bg-[#FEBAB9]/10 flex items-center justify-center mb-4">
                   <service.icon className="w-6 h-6 text-[#FEBAB9]" />
@@ -100,6 +103,7 @@ export function Services() {
                   <Link href="#booking">Book Now</Link>
                 </Button>
               </CardFooter>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FEBAB9]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Card>
           ))}
         </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display } from "next/font/google";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { BackToTop } from "@/components/back-to-top";
 import "../globals.css";
 
 const playfair = Playfair_Display({
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Navigation />
         {children}
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

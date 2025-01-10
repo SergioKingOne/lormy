@@ -36,11 +36,11 @@ export function Gallery() {
   return (
     <>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {images.map((image) => (
+        {images.map((image, index) => (
           <div
             key={image.src}
             className={cn(
-              "relative aspect-square cursor-pointer group overflow-hidden rounded-xl",
+              "relative aspect-square cursor-pointer group overflow-hidden rounded-xl bg-neutral-200",
               image.className
             )}
             onClick={() => setSelectedImage(image.src)}
@@ -51,6 +51,7 @@ export function Gallery() {
               fill
               className="object-cover transition-transform group-hover:scale-110"
             />
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity" />
           </div>
         ))}
       </div>

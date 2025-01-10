@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --primary: #FEBAB9;
+  --primary: #febab9;
 }
 
 @keyframes fade-up {
@@ -101,4 +101,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-

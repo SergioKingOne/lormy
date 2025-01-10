@@ -1,11 +1,11 @@
-import { Instagram, Mail, MapPin, Phone } from 'lucide-react'
-import Image from "next/image"
-import Link from "next/link"
+import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
   return (
     <footer className="bg-neutral-50 border-t">
-      <div className="container px-4 py-12 md:py-16">
+      <div className="container mx-auto max-w-7xl px-4 py-12 md:py-16">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <Image
@@ -84,6 +84,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
-
