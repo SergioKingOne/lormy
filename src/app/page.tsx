@@ -76,7 +76,7 @@ export default function Home() {
                 className="relative aspect-square group overflow-hidden rounded-xl"
               >
                 <Image
-                  src={`/instagram-${i + 1}.jpg`}
+                  src={`/images/instagram-${i + 1}.jpg`}
                   alt="Instagram post"
                   fill
                   className="object-cover transition-transform group-hover:scale-110"
