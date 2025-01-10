@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button"
-import { Gallery } from "@/components/gallery"
-import { Testimonials } from "@/components/testimonials"
-import { BookingForm } from "@/components/booking-form"
-import { Services } from "@/components/services"
-import { Instagram, ArrowRight } from 'lucide-react'
-import Image from "next/image"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { Gallery } from "@/components/gallery";
+import { Testimonials } from "@/components/testimonials";
+import { BookingForm } from "@/components/booking-form";
+import { Services } from "@/components/services";
+import { Instagram, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-white/50 to-white" />
           <Image
-            src="/makeup-bg.jpg"
+            src="/images/makeup-bg.jpg"
             alt="Background"
             fill
             className="object-cover opacity-50"
@@ -26,11 +26,16 @@ export default function Home() {
             Enhance Your Natural Beauty
           </h1>
           <p className="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto mb-8 animate-fade-up animation-delay-100">
-            Professional makeup artistry for your most special moments. 
-            From bridal to quinceañeras, we create looks that celebrate your unique beauty.
+            Professional makeup artistry for your most special moments. From
+            bridal to quinceañeras, we create looks that celebrate your unique
+            beauty.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up animation-delay-200">
-            <Button asChild size="lg" className="bg-[#FEBAB9] hover:bg-[#FEBAB9]/90">
+            <Button
+              asChild
+              size="lg"
+              className="bg-[#FEBAB9] hover:bg-[#FEBAB9]/90"
+            >
               <Link href="#booking">Book Now</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
@@ -61,10 +66,15 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-serif text-neutral-800 mb-4">
             Follow Our Journey
           </h2>
-          <p className="text-neutral-600 mb-8">@lormy_makeup • 4,487 followers</p>
+          <p className="text-neutral-600 mb-8">
+            @lormy_makeup • 4,487 followers
+          </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {Array.from({ length: 8 }).map((_, i) => (
-              <div key={i} className="relative aspect-square group overflow-hidden rounded-xl">
+              <div
+                key={i}
+                className="relative aspect-square group overflow-hidden rounded-xl"
+              >
                 <Image
                   src={`/instagram-${i + 1}.jpg`}
                   alt="Instagram post"
@@ -75,8 +85,8 @@ export default function Home() {
             ))}
           </div>
           <Button asChild variant="outline" size="lg">
-            <Link 
-              href="https://instagram.com/lormy_makeup" 
+            <Link
+              href="https://instagram.com/lormy_makeup"
               target="_blank"
               className="flex items-center gap-2"
             >
@@ -101,6 +111,5 @@ export default function Home() {
         </div>
       </section>
     </main>
-  )
+  );
 }
-
