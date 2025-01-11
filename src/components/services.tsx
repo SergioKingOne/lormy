@@ -95,7 +95,7 @@ export function Services() {
                   ))}
                 </ul>
               </CardContent>
-              <CardFooter className="mt-auto">
+              <CardFooter className="mt-auto relative z-10">
                 <Button
                   asChild
                   className="w-full bg-[#FEBAB9] hover:bg-[#FEBAB9]/90"
