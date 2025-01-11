@@ -49,7 +49,8 @@ export function Testimonials() {
           Client Love
         </h2>
         <p className="text-center text-neutral-600 max-w-2xl mx-auto mb-8 sm:mb-12">
-          Don't just take our word for it. Here's what our clients have to say.
+          Don&apos;t just take our word for it. Here&apos;s what our clients
+          have to say.
         </p>
         <Carousel
           opts={{

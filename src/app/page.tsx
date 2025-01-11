@@ -135,7 +135,8 @@ export default function Home() {
               Book Your Session
             </h2>
             <p className="text-center text-neutral-600 mb-8 sm:mb-12">
-              Fill out the form below and we'll get back to you within 24 hours
+              Fill out the form below and we&apos;ll get back to you within 24
+              hours
             </p>
             <BookingForm />
           </div>
