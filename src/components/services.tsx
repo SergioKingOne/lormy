@@ -70,7 +70,7 @@ export function Services() {
           {services.map((service) => (
             <Card
               key={service.title}
-              className="relative group overflow-hidden"
+              className="relative group overflow-hidden flex flex-col"
             >
               <CardHeader>
                 <div className="w-12 h-12 rounded-full bg-[#FEBAB9]/10 flex items-center justify-center mb-4">
@@ -79,7 +79,7 @@ export function Services() {
                 <CardTitle className="font-serif">{service.title}</CardTitle>
                 <CardDescription>{service.description}</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow">
                 <p className="text-2xl font-serif text-neutral-800 mb-4">
                   {service.price}
                 </p>
@@ -95,7 +95,7 @@ export function Services() {
                   ))}
                 </ul>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="mt-auto">
                 <Button
                   asChild
                   className="w-full bg-[#FEBAB9] hover:bg-[#FEBAB9]/90"
