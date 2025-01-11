@@ -43,12 +43,12 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-24">
+    <section className="py-16 sm:py-24">
       <div className="container mx-auto max-w-7xl px-4">
-        <h2 className="text-3xl md:text-4xl font-serif text-center text-neutral-800 mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-center text-neutral-800 mb-4">
           Client Love
         </h2>
-        <p className="text-center text-neutral-600 max-w-2xl mx-auto mb-12">
+        <p className="text-center text-neutral-600 max-w-2xl mx-auto mb-8 sm:mb-12">
           Don't just take our word for it. Here's what our clients have to say.
         </p>
         <Carousel
@@ -60,9 +60,12 @@ export function Testimonials() {
         >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <Card className="border-none shadow-none bg-neutral-50">
-                  <CardContent className="p-6">
+              <CarouselItem
+                key={index}
+                className="md:basis-1/2 lg:basis-1/3 pl-4"
+              >
+                <Card className="border-none shadow-none bg-neutral-50 h-full">
+                  <CardContent className="p-6 flex flex-col h-full">
                     <div className="flex gap-1 mb-4">
                       {Array.from({ length: testimonial.rating }).map(
                         (_, i) => (
@@ -73,7 +76,7 @@ export function Testimonials() {
                         )
                       )}
                     </div>
-                    <p className="text-neutral-600 mb-4">
+                    <p className="text-neutral-600 mb-4 flex-grow">
                       {testimonial.content}
                     </p>
                     <div>
@@ -89,8 +92,8 @@ export function Testimonials() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="hidden sm:flex" />
+          <CarouselNext className="hidden sm:flex" />
         </Carousel>
       </div>
     </section>

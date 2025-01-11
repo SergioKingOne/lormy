@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
 import {
   Form,
   FormControl,
@@ -10,26 +10,26 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
+} from "@/components/ui/form";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { format } from "date-fns"
-import { CalendarIcon, Loader2 } from 'lucide-react'
-import { useForm } from "react-hook-form"
-import * as z from "zod"
+} from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { format } from "date-fns";
+import { CalendarIcon, Loader2 } from "lucide-react";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -38,10 +38,10 @@ const formSchema = z.object({
   service: z.string(),
   date: z.date(),
   message: z.string().optional(),
-})
+});
 
 export function BookingForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -52,21 +52,21 @@ export function BookingForm() {
       service: "",
       message: "",
     },
-  })
+  });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true)
+    setIsSubmitting(true);
     // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    console.log(values)
-    setIsSubmitting(false)
-    form.reset()
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    console.log(values);
+    setIsSubmitting(false);
+    form.reset();
   }
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField
             control={form.control}
             name="name"
@@ -95,7 +95,7 @@ export function BookingForm() {
           />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField
             control={form.control}
             name="phone"
@@ -115,7 +115,10 @@ export function BookingForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Service</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
                   <FormControl>
                     <SelectTrigger>
                       <SelectValue placeholder="Select a service" />
@@ -123,7 +126,9 @@ export function BookingForm() {
                   </FormControl>
                   <SelectContent>
                     <SelectItem value="bridal">Bridal Makeup</SelectItem>
-                    <SelectItem value="quinceanera">Quinceañera Makeup</SelectItem>
+                    <SelectItem value="quinceanera">
+                      Quinceañera Makeup
+                    </SelectItem>
                     <SelectItem value="social">Social Event Makeup</SelectItem>
                   </SelectContent>
                 </Select>
@@ -191,8 +196,8 @@ export function BookingForm() {
           )}
         />
 
-        <Button 
-          type="submit" 
+        <Button
+          type="submit"
           className="w-full bg-[#FEBAB9] hover:bg-[#FEBAB9]/90"
           disabled={isSubmitting}
         >
@@ -207,6 +212,5 @@ export function BookingForm() {
         </Button>
       </form>
     </Form>
-  )
+  );
 }
-

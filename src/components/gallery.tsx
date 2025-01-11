@@ -35,7 +35,7 @@ export function Gallery() {
 
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {images.map((image, index) => (
           <div
             key={image.src}
@@ -60,7 +60,7 @@ export function Gallery() {
         open={!!selectedImage}
         onOpenChange={() => setSelectedImage(null)}
       >
-        <DialogContent className="max-w-3xl">
+        <DialogContent className="max-w-3xl p-1 sm:p-6">
           {selectedImage && (
             <div className="relative aspect-[3/2] w-full">
               <Image

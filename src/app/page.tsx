@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main>
+    <main className="overflow-hidden">
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#FEBAB9]/5">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-white/50 to-white" />
@@ -37,16 +37,16 @@ export default function Home() {
               src="/images/makeup-bg.jpg"
               alt="Background"
               fill
-              className="object-cover opacity-50"
+              className="object-cover object-center opacity-50"
               priority
             />
           </div>
         </div>
-        <div className="container relative z-10 px-4 py-20 text-center">
-          <h1 className="font-serif text-5xl md:text-7xl font-bold text-neutral-800 mb-6 animate-fade-up">
+        <div className="container mx-auto max-w-7xl relative z-10 px-4 py-20 text-center">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold text-neutral-800 mb-6 animate-fade-up">
             Enhance Your Natural Beauty
           </h1>
-          <p className="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto mb-8 animate-fade-up animation-delay-100">
+          <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto mb-8 animate-fade-up animation-delay-100">
             Professional makeup artistry for your most special moments. From
             bridal to quinceañeras, we create looks that celebrate your unique
             beauty.
@@ -55,11 +55,16 @@ export default function Home() {
             <Button
               asChild
               size="lg"
-              className="bg-[#FEBAB9] hover:bg-[#FEBAB9]/90"
+              className="w-full sm:w-auto bg-[#FEBAB9] hover:bg-[#FEBAB9]/90"
             >
               <Link href="#booking">Book Now</Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto"
+            >
               <Link href="/portfolio">
                 View Portfolio
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -71,9 +76,9 @@ export default function Home() {
 
       <Services />
 
-      <section className="py-24 bg-neutral-50">
+      <section className="py-16 sm:py-24 bg-neutral-50">
         <div className="container mx-auto max-w-7xl px-4">
-          <h2 className="text-3xl md:text-4xl font-serif text-center text-neutral-800 mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-center text-neutral-800 mb-8 sm:mb-16">
             Recent Transformations
           </h2>
           <Gallery />
@@ -82,15 +87,15 @@ export default function Home() {
 
       <Testimonials />
 
-      <section className="py-24 bg-[#FEBAB9]/5">
+      <section className="py-16 sm:py-24 bg-[#FEBAB9]/5">
         <div className="container mx-auto max-w-7xl px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif text-neutral-800 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-neutral-800 mb-4">
             Follow Our Journey
           </h2>
           <p className="text-neutral-600 mb-8">
             @lormy_makeup • 4,487 followers
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-8">
             {Array.from({ length: 8 }).map((_, i) => (
               <div
                 key={i}
@@ -105,11 +110,16 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <Button asChild variant="outline" size="lg">
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="w-full sm:w-auto"
+          >
             <Link
               href="https://instagram.com/lormy_makeup"
               target="_blank"
-              className="flex items-center gap-2"
+              className="flex items-center justify-center gap-2"
             >
               <Instagram className="w-5 h-5" />
               Follow on Instagram
@@ -118,13 +128,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="booking" className="py-24">
+      <section id="booking" className="py-16 sm:py-24">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-serif text-center text-neutral-800 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-center text-neutral-800 mb-4">
               Book Your Session
             </h2>
-            <p className="text-center text-neutral-600 mb-12">
+            <p className="text-center text-neutral-600 mb-8 sm:mb-12">
               Fill out the form below and we'll get back to you within 24 hours
             </p>
             <BookingForm />

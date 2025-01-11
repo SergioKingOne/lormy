@@ -56,21 +56,21 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-24">
+    <section id="services" className="py-16 sm:py-24">
       <div className="container mx-auto max-w-7xl px-4">
-        <h2 className="text-3xl md:text-4xl font-serif text-center text-neutral-800 mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-center text-neutral-800 mb-4">
           Our Services
         </h2>
-        <p className="text-center text-neutral-600 max-w-2xl mx-auto mb-12">
+        <p className="text-center text-neutral-600 max-w-2xl mx-auto mb-8 sm:mb-12">
           Professional makeup services tailored to your special moments. Each
           service includes a consultation to understand your style and
           preferences.
         </p>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service) => (
             <Card
               key={service.title}
-              className="relative group overflow-hidden flex flex-col"
+              className="relative group overflow-hidden flex flex-col h-full"
             >
               <CardHeader>
                 <div className="w-12 h-12 rounded-full bg-[#FEBAB9]/10 flex items-center justify-center mb-4">
